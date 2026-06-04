@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Song App</title>
+    <style>
+        body{
+            font-family: Arial;
+            text-align:center;
+            background:#f5f5f5;
+            padding:30px;
+        }
+        textarea{
+            width:80%;
+            height:150px;
+        }
+        button{
+            padding:10px 20px;
+            margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🎵 My Song App</h1>
+
+<textarea id="song" placeholder="Apna song likhein..."></textarea>
+<br>
+<button onclick="saveSong()">Save Song</button>
+
+<script>
+function saveSong(){
+    let song = document.getElementById("song").value;
+    localStorage.setItem("song", song);
+    alert("Song Save Ho Gaya!");
+}
+
+document.getElementById("song").value =
+localStorage.getItem("song") || "";
+</script>
+
+</body>
+</html>
